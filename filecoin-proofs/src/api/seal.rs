@@ -62,6 +62,7 @@ where
     fs::metadata(&out_path)
         .with_context(|| format!("could not read out_path={:?}", out_path.as_ref().display()))?;
 
+    info!("seal copy start!!");
     // Copy unsealed data to output location, where it will be sealed in place.
     fs::copy(&in_path, &out_path).with_context(|| {
         format!(
@@ -70,6 +71,8 @@ where
             out_path.as_ref().display()
         )
     })?;
+    info!("seal copy end!!");
+    info!("f_data Do!!");
 
     let f_data = OpenOptions::new()
         .read(true)
@@ -85,6 +88,7 @@ where
             .map_mut(&f_data)
             .with_context(|| format!("could not mmap out_path={:?}", out_path.as_ref().display()))?
     };
+    info!("compund paras start !!");
 
     let compound_setup_params = compound_proof::SetupParams {
         vanilla_params: setup_params(
@@ -101,6 +105,7 @@ where
             StackedDrg<DefaultTreeHasher, DefaultPieceHasher>,
             _,
         >>::setup(&compound_setup_params)?;
+    info!("compund paras end !!");
 
     info!("building merkle tree for the original data");
     let (config, comm_d) = measure_op(CommD, || -> Result<_> {
@@ -129,12 +134,15 @@ where
             CacheKey::CommDTree.to_string(),
             StoreConfig::default_cached_above_base_layer(tree_leafs, BINARY_ARITY),
         );
+        info!("start create MT-D!!");
+
         let data_tree = create_merkle_tree::<DefaultPieceHasher, typenum::U2>(
             Some(config.clone()),
             tree_leafs,
             &data,
         )?;
         drop(data);
+        info!("end create MT-D!!");
 
         config.size = Some(data_tree.len());
         let comm_d_root: Fr = data_tree.root().into();

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/storage-proofs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage-proofs/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/storage-proofs/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/storage-proofs/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sha2raw/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sha2raw/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sha2raw/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sha2raw/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filecoin-proofs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/filecoin-proofs/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/filecoin-proofs/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filecoin-proofs/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fil-proofs-tooling/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fil-proofs-tooling/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fil-proofs-tooling/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fil-proofs-tooling/benches" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/fil-proofs-tooling/target" />
+      <excludeFolder url="file://$MODULE_DIR$/filecoin-proofs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/sha2raw/target" />
+      <excludeFolder url="file://$MODULE_DIR$/storage-proofs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
